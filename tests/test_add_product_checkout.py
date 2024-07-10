@@ -9,9 +9,8 @@ from pages.checkouttwoPage import CheckouttowPage
 from pages.completeorderPage import CompleteorderPage
 import time
 
-
 @pytest.mark.usefixtures("test_setup")
-class TestLogin:
+class TestCheckout:
 
     def test_login(self):
         driver = self.driver
@@ -37,6 +36,8 @@ class TestLogin:
         cart_page.check_product_price()
         cart_page.click_checkout()
 
+    def test_checkout_process(self):
+        driver = self.driver
         checkoutone_page = CheckoutonePage(driver)
         checkoutone_page.enter_first_name(utils.FIRSTNAME)
         checkoutone_page.enter_last_name(utils.LASTNAME)
